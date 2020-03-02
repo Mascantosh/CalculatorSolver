@@ -1,5 +1,5 @@
 package command;
 
 public interface CalculatorCommand {
-    int execute(int digit);
+    int execute(int digit) throws CalculatorCommandExecuteException;
 }
