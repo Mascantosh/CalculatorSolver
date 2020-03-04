@@ -21,7 +21,7 @@ public class CalculatorCommandsIterator implements Iterable<String> {
 
             @Override
             public String next() {
-                return commands[curIndex++].toString();
+                return (curIndex + 1) + ". " + commands[curIndex++].toString();
             }
         };
     }

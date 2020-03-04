@@ -19,9 +19,9 @@ public class Solver implements AutoCloseable {
     }
 
 
-    public Collection<CommandsResult> solve() {
+    public List<CommandsResult> solve(int bound) {
         final List<OneNodeSolver> tasks = Stream.iterate(0, baseNode -> ++baseNode)
-                .limit(data.commands().length)
+                .limit(bound)
                 .map(baseNode -> new OneNodeSolver(data, data.commands()[baseNode])).collect(Collectors.toList());
         try {
             return executor.invokeAll(tasks).stream()
@@ -36,6 +36,7 @@ public class Solver implements AutoCloseable {
         try {
             return task.get();
         } catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
             return Collections.emptyList();
         }
     }

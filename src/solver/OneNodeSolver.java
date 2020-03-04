@@ -46,7 +46,7 @@ public class OneNodeSolver implements Callable<Collection<CommandsResult>> {
                 }
                 solve(commandValue, level + 1);
             } catch (CalculatorCommandExecuteException ignore) {
-                return;
+                continue;
             }
             Arrays.fill(buffer, level, buffer.length, null);
         }

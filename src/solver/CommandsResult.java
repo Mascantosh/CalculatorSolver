@@ -15,6 +15,6 @@ public class CommandsResult {
 
     @Override
     public String toString() {
-        return String.join(" -> ", iterator);
+        return String.join("\n", iterator);
     }
 }

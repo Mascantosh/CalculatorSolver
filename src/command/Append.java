@@ -1,9 +1,9 @@
 package command;
 
-public class AppendNumber extends BaseCommand {
+public class Append extends BaseCommand {
     private final int appendDigit;
 
-    public AppendNumber(int appendDigit) {
+    public Append(int appendDigit) {
         super(String.valueOf(appendDigit));
         this.appendDigit = appendDigit;
     }

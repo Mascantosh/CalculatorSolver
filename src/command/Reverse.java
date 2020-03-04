@@ -12,7 +12,10 @@ public class Reverse extends BaseCommand {
 
     @Override
     public int execute(int digit) throws CalculatorCommandExecuteException {
-        StringBuilder builder = new StringBuilder(String.valueOf(digit));
-        return Integer.parseInt(builder.reverse().toString());
+        final boolean negative = digit < 0;
+        StringBuilder builder = new StringBuilder(String.valueOf(Math.abs(digit)));
+        final int parse = Integer.parseInt(builder.reverse().toString());
+
+        return negative ? -parse : parse;
     }
 }
